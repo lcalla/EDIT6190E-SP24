@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>syllabus.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="design-thinking-and-dev-tools">Design Thinking and Dev Tools</h1>
+<table>
+<thead>
+<tr>
+<th>EDIT 6190e</th>
+<th>CRN#: 58274</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Spring 2023</td>
+<td></td>
+</tr>
+<tr>
+<td>Instructor</td>
+<td>Lawrence E. McCalla, Ph.D. (he/him/his)</td>
+</tr>
+<tr>
+<td>Office hours</td>
+<td>by appointment, Zoom</td>
+</tr>
+<tr>
+<td>Email</td>
+<td><a href="mailto:larrymc@uga.edu">larrymc@uga.edu</a></td>
+</tr>
+<tr>
+<td>Zoom</td>
+<td><a href="https://zoom.us/my/larrymccalla">https://zoom.us/my/larrymccalla</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="course-description">Course Description</h2>
+<p>EDIT 6190E is the first in a series of master’s-level courses that draw from the concept of a design studio – that is, an environment intended to foster shared learning and shared design experiences. This course combines the use of design thinking with the design and development of interactive learning environments built around personally meaningful project topics.</p>
+<h2 id="course-goals">Course Goals</h2>
+<p>This course has two main goals: 1) to master a collection of tools, methods, and techniques, many of which are computer-based, to be used throughout your participation in your degree program, in the design and development of learning environments; and 2) to reflect and write on the nature of design. Here is a brief summary of the unique requirements for this course:</p>
+<ul>
+<li>Completion of an Independent Project that demonstrates mastery of authoring and multimedia tools in an original design.</li>
+<li>Submission of a web-based design journal consisting of a group of reflection statements to accompany the completion of the Independent Project.</li>
+<li>Submission of a web-based review and critique of the design literature (note: this can be integrated into the design journal).</li>
+</ul>
+<h2 id="course-objectives">Course Objectives</h2>
+<p>Upon completing the course, each learner will be able to…</p>
+<ul>
+<li>Design and develop prototypes of e-learning modules on any topic of your choice.</li>
+<li>Use digital tools to build software prototypes.</li>
+<li>Write about your design work.</li>
+<li>Read about and reflect on the nature of design.</li>
+<li>Deliver an e-learning module that demonstrates competency in authoring and multimedia tools in an original design</li>
+</ul>
+<h2 id="required-technology">Required Technology</h2>
+<ul>
+<li>High-speed Internet access.</li>
+<li>Your own laptop or desktop computer. (Mobile devices are not sufficient.)</li>
+<li>Screen casting software (e.g., QuickTime, Screencast-O-Matic, etc.) and access to a video web server (such as YouTube). A screencast is a digital video recording of your computer screen and usually includes audio narration.</li>
+<li>Articulate Storyline 360
+○ While you are enrolled in this course, you will be provided with a free subscription to Articulate Storyline 360.
+○ Articulate Storyline 360 is a Windows only product. If you are using a Macintosh, you must have a dual boot system to allow you to run windows.
+○ Access will be provided by the instructor.</li>
+</ul>
+<h2 id="required-text">Required Text</h2>
+<p><a href="https://www.creativeconfidence.com/buy/">Kelley, D., &amp; Kelley, T. (2013). <em>Creative confidence: Unleashing the creative potential within us all</em>. Crown Business.</a></p>
+<h2 id="other-required-reading">Other Required Reading</h2>
+<p>In this course, you'll be required to read a variety of materials from a range of sources. These readings may be in the form of articles from books or journals, or they may be web-based. Some readings will be mandatory for all participants in EDIT 6190, while others will allow you to choose materials that best match your needs and interests. You'll be able to access these readings through eLC or a cloud drive specified by your instructor.</p>
+<h2 id="course-evaluation">Course Evaluation</h2>
+<p>I'll use eLC to post grades. Each task assigned will result in a grade in eLC. There are two types of grades: completion grades and rubric/checklist grades. Completion grades are exactly like they sound - do the work as described and receive full credit. Rubric/checklist grades will be graded based on your ability to create projects within rubric/checklist parameters. Each set of tasks will include a combination of both completion and rubric/checklist tasks. It will be very obvious which is which. Grades will be updated as soon as possible after a due date (usually no more than a week), assuming tasks are turned in on time.</p>
+<h2 id="grading-policy">Grading Policy</h2>
+<p>Throughout the semester we will discuss your progress in the course. This may be achieved through email and Zoom office appointments. You are welcome to turn in assignments ahead of time for formative feedback. Assignments are due on Fridays by midnight unless otherwise indicated.</p>
+<p><strong>Resubmitting work</strong>. If you turn in an assignment on time and receive a grade below 90%, you may resubmit the assignment within 48 hours after the assignment is returned to you. The highest grade you can receive on a resubmitted assignment is an 90%. Note that there is a 48-hour limit for each late assignment. You will not receive credit for an assignment that is turned in 48 hours after it was originally due.</p>
+<table>
+<thead>
+<tr>
+<th>Grade</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>92-100</td>
+</tr>
+<tr>
+<td>A-</td>
+<td>90-91</td>
+</tr>
+<tr>
+<td>B+</td>
+<td>87-89</td>
+</tr>
+<tr>
+<td>B</td>
+<td>83-86</td>
+</tr>
+<tr>
+<td>B-</td>
+<td>80-82</td>
+</tr>
+<tr>
+<td>C+</td>
+<td>77-79</td>
+</tr>
+<tr>
+<td>C</td>
+<td>73-76</td>
+</tr>
+<tr>
+<td>C-</td>
+<td>70-72</td>
+</tr>
+<tr>
+<td>D+</td>
+<td>67-69</td>
+</tr>
+<tr>
+<td>D</td>
+<td>63-66</td>
+</tr>
+<tr>
+<td>D-</td>
+<td>60-62</td>
+</tr>
+<tr>
+<td>F</td>
+<td>59 or lower</td>
+</tr>
+</tbody>
+</table>
+<h2 id="attendance-policy">ATTENDANCE POLICY</h2>
+<p>While there is obviously not an attendance policy - there is a mutual expectation that we all will be easily contacted during the 15 weeks of the semester. All tasks are due on the assigned due date unless another arrangement has been made.</p>
+<h2 id="how-is-the-semester-organized">How is the semester organized?</h2>
+<ul>
+<li>New set of tasks posted on website Monday by noon when a new unit begins</li>
+<li>Tasks are due at midnight Friday night at the end of the unit (see schedule below)</li>
+<li>Graded tasks are returned soon after a unit's due date (usually no more than a week), grades available in eLC</li>
+<li>Course updates, etc. sent via email as needed, check email frequently M-F</li>
+</ul>
+<h2 id="what-is-the-class-schedule">What is the class schedule?</h2>
+<table>
+<thead>
+<tr>
+<th>Length of Unit</th>
+<th>Unit Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01/09 - 01/20</td>
+<td>Unit 1: Preparation (2 weeks)</td>
+</tr>
+<tr>
+<td>01/23 - 02/10</td>
+<td>Unit 2: Inspiration (3 weeks)</td>
+</tr>
+<tr>
+<td>02/13 - 03/03</td>
+<td>Unit 3:  Synthesis (3 weeks)</td>
+</tr>
+<tr>
+<td>03/06 - 03/10</td>
+<td><em>Spring Break</em></td>
+</tr>
+<tr>
+<td>03/13 - 03/31</td>
+<td>Unit 4: Ideation &amp; Experimentation (3 weeks)</td>
+</tr>
+<tr>
+<td>04/03 - 04/21</td>
+<td>Unit 5: Implementation (3 weeks)</td>
+</tr>
+<tr>
+<td></td>
+<td><em>No Final Exam</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="welcome-to-the-course">Welcome to the course</h2>
+<p>I'm excited to work with you all on developing your design and e-learning skills. It's important to remember that while the main focus of this course is design, you will also be learning how to build an e-learning module.</p>
+<p>To succeed in this course, it's crucial that you focus on acquiring skills with software tools. As a software designer, it's always important to be learning new tools and skills. The specific tools you'll need to learn will depend on your project, and you'll be doing most of this learning independently using online resources like LinkedIn Learning.</p>
+<p>Your main project for this course will be developing and delivering a module using Articulate Storyline. I'm looking forward to seeing what you all create! Let me know if you have any questions.</p>
+<h2 id="a-studio-approach-to-instruction">A Studio Approach to Instruction</h2>
+<p>I understand that it can be challenging for students in our program to master both the design knowledge and the technological skills needed to bring designs to life within the scope of a 16-week course. The course-based model of graduate education, while long-standing, can be problematic in situations like ours where students need to learn a wide range of computer-based tools in a short period of time and then apply them to their instructional design projects.</p>
+<p>One significant problem that both instructors and students have faced is how to effectively teach and learn these tools so that they can be properly applied in an instructional design project within the time frame of a 16-week course. It's not uncommon for students to still be in the process of mastering these tools as the course ends. The nature of instructional design as it is applied in education and training does not always lend itself well to being taught in 16-week blocks of time.</p>
+<p>To address this problem, we have designed a studio approach based on a constructivist perspective. While it is difficult to adequately summarize this perspective here, it is based on several core ideas:</p>
+<ol>
+<li>Learning is an active process in which meaning is constructed by each individual.</li>
+<li>Learning is a social activity founded on collaboration and mutual respect of different viewpoints; and</li>
+<li>Learning is embedded in the building of artifacts that are shared and critiqued by one’s peers.</li>
+</ol>
+<p>No matter where you are in your design and development skills, this course is an opportunity for you to grow and improve. As an instructional designer, it's important to stay up to date on the latest technology and design methodologies. This course will provide you with a solid foundation, but your learning journey will not end here. It's important to continue learning and growing as a professional even after you complete this program. So, let's get started and see how far we can take your skills!</p>
+<p>In this course, we will be using a project-based approach to learning the tools you'll need. This means that you'll be mastering a variety of tools by completing a project. However, this course is a bit different in that you won't be required to develop instructional projects. You have the freedom to choose a project that aligns with your own interests and values, and you won't be held to instructional design criteria. Your project could be a shortened version of what you'll be working on in the next studio class, or it could be a personally meaningful project that just happens to use the tools you'll need next semester.</p>
+<p>The purpose of this approach is to give you the freedom to explore and design something that you find personally engaging or valuable, without feeling pressure to follow certain principles that you may not have fully understood yet. You can choose any project topic that can be expressed using Articulate Storyline, such as family music videos, interactive stories, multimedia biographies, or even games for entertainment.</p>
+<p>One of our goals for this course is to give you a broad understanding of design, both instructional and beyond. To achieve this, you'll be expected to complete several readings on design topics. One particularly important set of readings will be on &quot;learning by designing,&quot; also known as constructionism. This perspective holds that learning is most effective when it involves the construction or creation of a tangible artifact that can be shared and publicly critiqued.</p>
+<p>To help you reflect on your learning and progress throughout the course, you'll be required to keep a design journal and follow the schedule provided by the instructor as you work on your independent project. Additionally, you'll be expected to write a short review and critique of the design literature you read during the semester. You can choose to integrate this literature review and critique into your design journal, or you can write it as a stand-alone paper.</p>
+<p>I hope this gives you a better idea of what to expect in this course. If you have any questions, don't hesitate to ask.</p>
+<h2 id="edit-6190-main-requirements">EDIT 6190 Main Requirements</h2>
+<h3 id="independent-project">Independent Project</h3>
+<p>I hope you're excited to get started on your independent project as soon as you've identified your project topic. Most participants will have a topic by around the third or fourth week of the semester, so if you haven't chosen a topic by mid-semester, I'll be reaching out to discuss the possibility of withdrawing from the course.</p>
+<p>As you work on your project, you'll also be updating your design journal continuously throughout the rest of the term. Keep in mind that your project is always subject to review and evaluation, so it's a good idea to seek feedback on your prototypes throughout the term. You'll need to have a working draft or functional prototype of your project ready for the &quot;final review,&quot; with the final modifications made in time to display the project in its final form near the end of the term.</p>
+<p><strong>Project options</strong>. There are a few different options for choosing the topics and design elements for your independent project. You could create something that is personally relevant and meaningful to you (it doesn't have to be instructional or follow instructional design procedures), you could produce something that aligns with your current work in education or business and industry, or you could negotiate a different idea with your instructor. The only two project topics that are off-limits are personal websites and masters or specialist portfolio websites. Just remember that whatever project you choose should be developed and delivered as an Articulate Storyline learning module.</p>
+<p>It's also important to note that your independent project should involve original work that goes beyond the step-by-step development covered in the books and resources you used to learn the tools. You'll present this original work during the showing near the end of the semester. To help you get started, we'll use tools and methods associated with design thinking to identify and learn about the target audience for your project. As you start thinking about your project topic, be sure to consider your target audience as well. Gaining empathy for your audience is a great starting point for design work.</p>
+<p><strong>Project size</strong>. Your e-learning module should provide about 30 minutes of learning experiences to the target audience. In addition to your module, I’ll need you to provide a video overview explaining the goal of the module and how to use it.</p>
+<h3 id="design-journal">Design Journal</h3>
+<p>A design journal is a record of the design process for a product or system. It can include a wide range of information, such as notes, sketches, diagrams, and prototypes, as well as reflections on the design process and any challenges or decisions made during the design process. Design journals are often used by individual designers or design teams to document and reflect on their work, and they can also be shared with others as a way to communicate the design process and solicit feedback. Design journals can be an important tool for designers, as they provide a record of the design process that can be used for reference and review. They can also be useful for documenting and demonstrating the design process for others, such as clients or stakeholders.</p>
+<ul>
+<li>You'll be keeping a design journal throughout this course to document your project work. You'll have a journal entry assignment at the end of each unit, and I'll provide details on what needs to be included in each entry. These journal entries will be an important part of the review process when we conduct desk crits, so make sure to keep them up to date.</li>
+</ul>
+<h3 id="design-literature-summary-and-critique">Design Literature Summary and Critique</h3>
+<p>I'm excited to see how you'll integrate the design literature you've read this semester into your design journal. You've got two options for fulfilling this requirement: 1) Integrate the literature directly into your journal entries, or 2) Write and submit a separate paper (at least 2000 words) that summarizes and critiques the literature. I recommend choosing the former option and integrating the readings into the journal entries.</p>
+<p>While it can be challenging to make strong connections between your design work and the literature, it's worth the effort and aligns with the goals of this course. If you'd prefer to go the separate paper route, just let me know in your first journal entry.</p>
+<p>Don't forget to use APA style and formatting as you cite and reference the literature. At the bottom of each journal entry, be sure to include the complete reference for any literature you've cited. You only need to effectively and substantially integrate one example of literature into each entry, but it should be a different example for each entry (though you can still reference literature multiple times in addition to a unique example). Most people will focus on the required studio readings, but any relevant scholarly literature is acceptable.</p>
+<p>Keep in mind that your design journal is a public document, so make sure to proofread carefully for spelling, grammar, organization, and clarity. Your reflections should focus on the design of your project (not your general studio experience) and should be written in a professional manner. These are public design journals, not personal diaries.</p>
+<p>I'm looking forward to seeing the evolution of your online design journal as you document your design efforts. By writing consistently and coherently about your work, you'll not only be able to better understand your own thoughts and opinions on education, training, instruction, and learning, but you'll also be able to share those insights with others. Plus, you'll have the bonus of learning a little bit about yourself through the process of writing and reflecting on your design process.</p>
+<p>Your design journal will be an important source for me to understand what you've learned during the course, and it'll also be a useful reflective tool for you to use as you consolidate your learning through the practice of design.</p>
+<p>I'm excited to see what you'll come up with!</p>
+<h3 id="prototypes">Prototypes</h3>
+<p>A prototype is a model or early version of a product or system that is created to test and refine its design. Prototypes are typically not fully functional or complete, but they are used to evaluate and improve the design of a product or system. Prototypes can be used to test the feasibility of a design, to gather user feedback, and to identify and fix problems before the final product is developed. Prototypes can be physical models or digital simulations, and they can range from simple mock-ups to more complex, functional models. Prototyping is an important part of the design process for many types of products, including software, hardware, and consumer goods, as it allows designers and developers to test and refine their designs before committing to a final product.</p>
+<ul>
+<li>During the course you’ll provide a series of prototypes of your project in varying degrees of completeness. These prototype submissions are then followed by a round of desk crits, described below.</li>
+</ul>
+<h3 id="desk-crits">Desk Crits</h3>
+<p>A desk crit is a type of design review in which a team of designers and other stakeholders review and critique a design at an early stage, typically while the design is still in the form of drawings or a digital model. The purpose of a desk crit is to identify problems or issues with the design and to suggest improvements before the design is developed further. Desk crits are typically informal, and they can be conducted in a variety of settings, including at a desk, in a conference room, in an art studio, and of course—online. They are often used in the early stages of a design process to catch problems early on, when they are easier and cheaper to fix. Desk crits can be an important part of the design process for many types of products, including hardware, software, and consumer goods.</p>
+<ul>
+<li>We use desk crits in this course to review our prototypes and suggest ways in which they might be improved. Prototype submissions are usually followed by a round of desk crits where you will review and provide feedback for two of your peers.</li>
+</ul>
+<h2 id="honesty-policy">Honesty Policy</h2>
+<p>All academic work must meet the standards contained in “A Culture of Honesty.” Each student is responsible to inform themselves about those standards before performing any academic work. The full version of “A Culture of Honesty: Policies and Procedures” detailing UGA’s policies on this matter can be found at: <a href="https://honesty.uga.edu/_resources/documents/UGA_AH_Policy_2022.pdf">https://honesty.uga.edu/_resources/documents/UGA_AH_Policy_2022.pdf</a></p>
+<h2 id="diversity-equity-inclusion-accessibility">DIVERSITY, EQUITY, INCLUSION, ACCESSIBILITY</h2>
+<p>UGA is committed to creating a dynamic, diverse, and welcoming learning environment for all students and has a non-discrimination policy that reflects this philosophy: <a href="https://eoo.uga.edu/civil_rights_NDAH/ndah-policy/">https://eoo.uga.edu/civil_rights_NDAH/ndah-policy/</a>. Our class will respect all students regardless of race, color, sex, sexual orientation, gender identity, ethnicity or national origin, religion, age, genetic information, disability, or veteran status. Ideas are open to critique; individuals are not.</p>
+<p>Any student who faces challenges securing food or housing and believes this issue may affect their performance in this course is urged to contact UGA Student Care and Outreach for support: <a href="https://sco.uga.edu">https://sco.uga.edu</a> Furthermore, please notify me, as the course instructor, if you are comfortable in doing so.</p>
+<p>Please let me know if you have any special circumstances that you believe may affect your performance in class so that I might develop appropriate accommodations. Where legally permitted, I will try to maintain complete confidentiality of any information that you choose to share with me.</p>
+<p>If you have a disability and would like to request accommodations, please feel free to discuss this with me. All individuals receiving accommodations in the classroom must be registered with Disability Services. Please visit their website at <a href="https://drc.uga.edu">https://drc.uga.edu</a> for further information. I am happy to help you with this process.</p>
+<p>The course syllabus is a general plan for the course; deviations announced to the class by the instructor may be necessary.</p>
+
+</body>
+</html>
